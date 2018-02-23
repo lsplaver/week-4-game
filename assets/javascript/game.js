@@ -1,24 +1,24 @@
 $(document).ready(function() {
     // temporary holding area for creating variables to be moved later
-    var winningNumber, playerTotalScore, crystalOne, crystalTwo, crystalThree, crystalFour, totalWins, totalLosses;
+    var /* winningNumber, */ playerTotalScore, /* crystalOne, crystalTwo, crystalThree, crystalFour, */ totalWins, totalLosses;
 
-    winningNumber = Math.floor((Math.random() * 100) + 20);
-    console.log("The current value of winningNumber is: " + winningNumber);
+    // winningNumber = Math.floor((Math.random() * 100) + 20);
+    // console.log("The current value of winningNumber is: " + winningNumber);
 
     playerTotalScore = 0;
     console.log("The initial value of playerTotalScore is: " + playerTotalScore);
 
-    crystalOne = Math.floor((Math.random() * 12) + 1);
-    console.log("The current value of crystalOne is: " + crystalOne);
+    // crystalOne = Math.floor((Math.random() * 12) + 1);
+    // console.log("The current value of crystalOne is: " + crystalOne);
 
-    crystalTwo = Math.floor((Math.random() * 12) + 1);
-    console.log("The current value of crystalTwo is: " + crystalTwo);
+    // crystalTwo = Math.floor((Math.random() * 12) + 1);
+    // console.log("The current value of crystalTwo is: " + crystalTwo);
 
-    crystalThree = Math.floor((Math.random() * 12) + 1);
-    console.log("The current value of crystalThree is: " + crystalThree);
+    // crystalThree = Math.floor((Math.random() * 12) + 1);
+    // console.log("The current value of crystalThree is: " + crystalThree);
 
-    crystalFour = Math.floor((Math.random() * 12) + 1);
-    console.log("The current value of crystalFour is: " + crystalFour);
+    // crystalFour = Math.floor((Math.random() * 12) + 1);
+    // console.log("The current value of crystalFour is: " + crystalFour);
 
     totalWins = 0;
     console.log("The initial value of totalWins is: " + totalWins);
@@ -190,8 +190,111 @@ $(document).ready(function() {
         instructParaFiveFun();
     }
 
+    function winningNumberFun () {
+        var winningNumber;
+        winningNumber = Math.floor((Math.random() * 100) + 20);
+        console.log("The current value of winningNumber is: " + winningNumber);
+        return winningNumber;
+    }
+
+    function initialWinningNumberBodyFun() {
+        var newDiv = $("<div>empty text winning number body</div>");
+
+        newDiv = $(newDiv).attr("id", "winningNumberBody");
+
+        $("#mainBody").append(newDiv);
+    }
+
+    function initialWinningNumberDivFun() {
+        var newDiv2 = $("<div>empty text winning number div</div>");
+
+        newDiv2 = $(newDiv2).attr("id", "winningNumberDiv");
+
+        newDiv2 = $(newDiv2).text(winningNumberFun());
+
+        console.log("The current value of newDiv.text() is: " + newDiv2.text());
+
+        $("#winningNumberBody").append(newDiv2);
+    }
+
+    function newWinningNumberFun() {
+        var newWinningNumber = $("#winningNumberDiv");
+
+        newWinningNumber = $(newWinningNumber).text(winningNumberFun());
+
+        console.log("The current value of the new winning number using newWinningNumber is: " + newWinningNumber.text());
+    }
+
+    function crystalsOneFun() {
+        var crystalOne = -100000;
+
+        crystalOne = Math.floor((Math.random() * 12) + 1);
+        console.log("The current value of crystalOne is: " + crystalOne);
+
+        return crystalOne;
+    }
+
+    function crystalsTwoFun() {
+        var crystalTwo = -20000;
+
+        crystalTwo = Math.floor((Math.random() * 12) + 1);
+        console.log("The current value of crystalTwo is: " + crystalTwo);
+
+        return crystalTwo;
+    }
+
+    function crystalsThreeFun() {
+        var crystalThree = -30000;
+
+        crystalThree = Math.floor((Math.random() * 12) + 1);
+        console.log("The current value of crystalThree is: " + crystalThree);
+
+        return crystalThree;
+    }
+
+    function crystalsFourFun() {
+        var crystalFour = -40000;
+
+        crystalFour = Math.floor((Math.random() * 12) + 1);
+        console.log("The current value of crystalFour is: " + crystalFour);
+
+        return crystalFour;
+    }
+
     // temporary holding area for general functions
     instructionsBodyFun();
-
     
+    initialWinningNumberBodyFun();
+
+    initialWinningNumberDivFun();
+
+    newWinningNumberFun();
+
+    // initialGameRecordBodyFun();
+
+    // initialCrystalsBodyFun();
+
+    // initialScoreBodyFun();
+
+    // scoreDescBodyFun();
+
+    // winningNumberFun();
+
+    // gameRecordFun();
+
+    crystalsOneFun();
+
+    crystalsTwoFun();
+
+    crystalsThreeFun();
+
+    crystalsFourFun();
+
+    // crystalsOneClickFun();
+
+    // crystalsTwoClickFun();
+
+    // crystalsThreeClickFun();
+
+    // crystalsFourClickFun();
 })

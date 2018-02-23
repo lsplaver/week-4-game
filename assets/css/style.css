@@ -1,0 +1,16 @@
+h1 {
+    color: white;
+    background-color: tomato;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    padding: 5px;
+    margin: 10px;
+    width: 310px;
+    text-align: center;
+}
+
+#instructionsBody {
+    background-color: peachpuff;
+    color: darkgreen;
+    font-size: medium;
+}

@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // temporary holding area for creating variables to be moved later
-    var /* winningNumber, */ playerTotalScore, /* crystalOne, crystalTwo, crystalThree, crystalFour, */ totalWins, totalLosses;
+    var /* winningNumber, */ playerTotalScore; // , /* crystalOne, crystalTwo, crystalThree, crystalFour, */ totalWins, totalLosses;
 
     // winningNumber = Math.floor((Math.random() * 100) + 20);
     // console.log("The current value of winningNumber is: " + winningNumber);
@@ -20,11 +20,11 @@ $(document).ready(function() {
     // crystalFour = Math.floor((Math.random() * 12) + 1);
     // console.log("The current value of crystalFour is: " + crystalFour);
 
-    totalWins = 0;
-    console.log("The initial value of totalWins is: " + totalWins);
+    // totalWins = 0;
+    // console.log("The initial value of totalWins is: " + totalWins);
 
-    totalLosses = 0;
-    console.log("The initial value of totalLosses is: " + totalLosses);
+    // totalLosses = 0;
+    // console.log("The initial value of totalLosses is: " + totalLosses);
 
     var newDiv, targetDiv;
     newDiv = $("<div></div>");
@@ -205,20 +205,20 @@ $(document).ready(function() {
         $("#mainBody").append(newDiv);
     }
 
-    function initialWinningNumberDivFun() {
-        var newDiv2 = $("<div>empty text winning number div</div>");
+    function initialWinningNumberSectionFun() {
+        var newSection = $("<section>empty text winning number section</section>");
 
-        newDiv2 = $(newDiv2).attr("id", "winningNumberDiv");
+        newSection = $(newSection).attr("id", "winningNumberSection");
 
-        newDiv2 = $(newDiv2).text(winningNumberFun());
+        newSection = $(newSection).text(winningNumberFun());
 
-        console.log("The current value of newDiv.text() is: " + newDiv2.text());
+        console.log("The current value of newDiv.text() is: " + newSection.text());
 
-        $("#winningNumberBody").append(newDiv2);
+        $("#winningNumberBody").append(newSection);
     }
 
     function newWinningNumberFun() {
-        var newWinningNumber = $("#winningNumberDiv");
+        var newWinningNumber = $("#winningNumberSection");
 
         newWinningNumber = $(newWinningNumber).text(winningNumberFun());
 
@@ -261,16 +261,147 @@ $(document).ready(function() {
         return crystalFour;
     }
 
+    function initialGameRecordBodyFun() {
+        var newAside = $("<aside>empty aside text</aside>");
+
+        $("#winningNumberBody").append(newAside);
+
+        var newDiv = $("<div>empty div text</div>");
+
+        newDiv = $(newDiv).attr("id", "gameRecordBody");
+
+        $("ASIDE").append(newDiv);
+
+        var totalWins = 0, totalLosses = 0;
+
+        console.log("The initial value of totalWins is: " + totalWins);
+
+        console.log("The initial value of totalLosses is: " + totalLosses);
+
+        var newDiv2 = $("<div>wins div and br</div>");
+
+        newDiv2 = $(newDiv2).attr("id", "playerWins").text("Wins: " + totalWins);
+
+        var newDiv3 = $("<div>losses div and br</div>");
+
+        newDiv3 = $(newDiv3).attr("id", "playerLosses").text("Losses: " + totalLosses);
+
+        $("#gameRecordBody").append(newDiv2).append(newDiv3);
+
+        $("playerWins").wrap("<div></div>");
+
+        $("playerLosses").wrap("<div></div>");
+
+        totalWinsFun(totalWins);
+
+        totalLossesFun(totalLosses);
+    }
+
+    function totalWinsFun(gamesWon) { // , gameStarted) {
+        // var firstGameStarted = false;
+        // firstGameStarted = gameStarted;
+        // if (firstGameStarted == false)
+        // {
+            // var totalWins = 0;
+        // }
+
+        // else {
+            // var totalWins = gamesWon + 1;
+        // }
+        // var wins = 0, totalWins;
+        var wins = gamesWon, totalWins;
+
+        if (wins == 0) {
+            totalWins = wins;
+        }
+
+        else {
+            totalWins = wins + 1;
+        }
+
+        $("#playerWins").text("Wins: " + totalWins);
+
+        return totalWins;
+    } 
+
+    function totalLossesFun(gamesLost) { // , gameStarted) {
+        // var firstGameStarted = false;
+        // firstGameStarted = gameStarted;
+        // if (firstGameStarted == false)
+        // {
+        //     var totalLosses = 0;
+        // }
+
+        // else {
+        //     var totalLosses = gamesLost + 1;
+        // }
+        var losses = gamesLost, totalLosses;
+
+        if (losses == 0) {
+            totalLosses = losses;
+        }
+
+        else {
+            totalLosses = totalLosses + losses;
+        }
+
+        $("#playerWins").text("Wins: " + totalLosses);
+
+        return totalLosses;
+    } 
+
+    // function btnClickedFun() {
+    //     var btnClicked = false;
+
+    //     return crystalsClick(btnClicked);
+    // }
+
+    // // $("button").click(); //function determine // crystalsClick(true));
+
+    
+    // function crystalsClick(buttonClick) {
+    //     if (((totalWinsFun() == 0) && (totalLossesFun() == 0))) {
+    //         return totalLosses, totalWins;
+    //     }
+    // }
+
+    // function multipleGames(crystalClicked) {
+    //     var secondGame = false;
+    // }
+
+    // function initValues() {
+    //     var initialValuesAll = 0;
+        
+    //     return initialValuesAll;
+    // }
+
+    // $("#btnCrystalOne").click(updateScore("oneClicked"));
+    
+    // function totalScore(aScore) {
+    //     var new 
+    // }
+    // function updateScore(aBtnClicked) {
+    //     var whichBtnClicked = "";
+    //     whichBtnClicked = aBtnClicked;
+    //     switch (whichBtnClicked) {
+    //         case "oneClicked":
+    //             crystalsOneClickFun();
+    //     }
+    // }
+
+    function crystalsOneClickFun() {
+
+    }
     // temporary holding area for general functions
     instructionsBodyFun();
     
     initialWinningNumberBodyFun();
 
-    initialWinningNumberDivFun();
+    initialWinningNumberSectionFun();
 
     newWinningNumberFun();
 
-    // initialGameRecordBodyFun();
+    initialGameRecordBodyFun();
 
     // initialCrystalsBodyFun();
 

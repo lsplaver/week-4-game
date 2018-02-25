@@ -225,13 +225,23 @@ $(document).ready(function() {
         return winningNumber;
     }
 
+    function clearAllColAndRowText() {
+        $(".col-lg-8 .col-lg-4 .col-6 .row").text("");
+    }
+
     function initialWinningNumberBodyFun() {
-        var newDiv;
+        var newDiv, newDiv1;
         newDiv = $("<div>empty text winning number body</div>");
 
-        newDiv = $(newDiv).attr("id", "winningNumberBody");
+        newDiv = $(newDiv).attr("id", "winningNumberBody").text("");
 
         $("#mainBody").append(newDiv);
+
+        newDiv = $("<div>  empty row</div>"),newDiv1 = $("<div>empty col</div>");
+        newDiv = $(newDiv).attr("class", "row").attr("id","winningNumberBodyRow1").text(""),$(newDiv1).attr("class", "col-6 col-lg-8").text("");
+        $("#winningNumberBody").append(newDiv),$(newDiv).append(newDiv1);
+
+        clearAllColAndRowText();
     }
 
     function initialWinningNumberSectionFun() {
@@ -244,7 +254,7 @@ $(document).ready(function() {
 
         console.log("The current value of newDiv.text() is: " + newSection.text());
 
-        $("#winningNumberBody").append(newSection);
+        $(/*"#winningNumberBody"*/"#winningNumberBodyRow1").append(newSection);
 
         newWinningNumberFun();
     }
@@ -451,43 +461,53 @@ $(document).ready(function() {
 
         // var newDiv = $("#crystalMainBody");
         // for (var x = 0; x < 4; x++) {
-            var aNewDiv1;
+            var targetDiv, newDiv, newDiv1, newDiv2, newDiv3, newDiv4;
+            // targetDiv = 
+            newDiv = $("<div>  empty row</div>");
+            newDiv1 = $("<div>empty col1</div>"),newDiv2 = $("<div>empty col2</div>"),newDiv3 = $("<div>empty col3</div>"),newDiv4 = $("<div>empty coi4</div>");
+            newDiv = $(newDiv).attr("id","crystalsMainBodyRow1").attr("class", "row").text("");
+            $(newDiv1).attr("id", "crystalCol1").attr("class", "col-3").text(""),$(newDiv2).attr("id", "crystalCol2").attr("class", "col-3").text(""),$(newDiv3).attr("id", "crystalCol3").attr("class", "col-3").text(""),$(newDiv4).attr("id", "crystalCol4").attr("class", "col-3").text("");
+            $("#crystalsMainBody").append(newDiv);
+            $(newDiv).append(newDiv1),$(newDiv).append(newDiv2),$(newDiv).append(newDiv3),$(newDiv).append(newDiv4);
+    
+            clearAllColAndRowText();
+                var aNewDiv1;
             aNewDiv1 = $("<div>empty loop number: 1 div</div>");
-            aNewDiv1 = $(aNewDiv1).attr("id", "crystalNo1");
+            aNewDiv1 = $(aNewDiv1).attr("id", "crystalNo1").text("");
             var aBtn1;
             aBtn1 = $("<button>empty loop number 1 button</button>");
-            aBtn1 = $(aBtn1).attr("id", "crystalButtonNo1"); // .attr("click", "btnClickedEvent('one')");
-            $("#crystalsMainBody").append(aNewDiv1);
+            aBtn1 = $(aBtn1).attr("id", "crystalButtonNo1").text(""); // .attr("click", "btnClickedEvent('one')");
+            $(newDiv1).append(aNewDiv1);
             // $(aBtn1).wrap(aNewDiv1);
             $(aNewDiv1).append(aBtn1);
             var aNewDiv2;
             aNewDiv2 = $("<div>empty loop number: 2 div</div>");
-            aNewDiv2 = $(aNewDiv2).attr("id", "crystalNo2");
+            aNewDiv2 = $(aNewDiv2).attr("id", "crystalNo2").text("");
             var aBtn2;
             aBtn2 = $("<button>empty loop number 2 button</button>");
-            aBtn2 = $(aBtn2).attr("id", "crystalButtonNo2"); // .attr("click", btnClickedEvent("two"));//(click("one"));
+            aBtn2 = $(aBtn2).attr("id", "crystalButtonNo2").text(""); // .attr("click", btnClickedEvent("two"));//(click("one"));
             // aBtn2 = $(aBtn2).click( function () {btnClickedEvent("two")});
             // aBtn2 = $(aBtn2).attr("onclick", btnClickedEvent("two"));
             // aBtn2 = $(aBtn2).attr("click", ""); //, btnClickedEventTwo());
-            $("#crystalsMainBody").append(aNewDiv2);
+            $(newDiv2).append(aNewDiv2);
             // $(aBtn2).wrap(aNewDiv2);
             $(aNewDiv2).append(aBtn2);
             var aNewDiv3;
             aNewDiv3 = $("<div>empty loop number: 3 div</div>");
-            aNewDiv3 = $(aNewDiv3).attr("id", "crystalNo3");
+            aNewDiv3 = $(aNewDiv3).attr("id", "crystalNo3").text("");
             var aBtn3;
             aBtn3 = $("<button>empty loop number 3 button</button>");
-            aBtn3 = $(aBtn3).attr("id", "crystalButtonNo3");
-            $("#crystalsMainBody").append(aNewDiv3);
+            aBtn3 = $(aBtn3).attr("id", "crystalButtonNo3").text("");
+            $(newDiv3).append(aNewDiv3);
             // $(aBtn3).wrap(aNewDiv3);
             $(aNewDiv3).append(aBtn3);
             var aNewDiv4;
             aNewDiv4 = $("<div>empty loop number: 4 div</div>");
-            aNewDiv4 = $(aNewDiv4).attr("id", "crystalNo4");
+            aNewDiv4 = $(aNewDiv4).attr("id", "crystalNo4").text("");
             var aBtn4;
             aBtn4 = $("<button>empty loop number 4 button</button>");
-            aBtn4 = $(aBtn4).attr("id", "crystalButtonNo4");
-            $("#crystalsMainBody").append(aNewDiv4);
+            aBtn4 = $(aBtn4).attr("id", "crystalButtonNo4").text("");
+            $(newDiv4).append(aNewDiv4);
             // $(aBtn4).wrap(aNewDiv4);
             $(aNewDiv4).append(aBtn4);
         // }
@@ -732,192 +752,6 @@ $(document).ready(function() {
     
         // crystalsFourClickFun();
     });
-    // $("#crystalsButtonNo1").click(); // function () {btnClickedEvent("one")});
-
-    // $("#crystalsButtonNo2").click(); // function () {btnClickedEvent("two")});
-
-    // $("#crystalsButtonNo3").click(); // function () {btnClickedEvent("three")});
-
-    // $("#crystalsButtonNo4").click(); // function () {btnClickedEvent("four")});
-
-    // function btnClickedEvent(whichBtn) {
-    //     var btnClicked = whichBtn;
-    //     var score = parseInt(newScore.toString());
-    //     switch(btnClicked) {
-    //         case "one":
-    //             crystalsOneClickFun(score); // parseInt(newScore.toString()));
-    //             break;
-    //         case "two":
-    //             crystalsTwoClickFun(score); //parseInt(new))
-    //             break;
-    //         case "three":
-    //             crystalsThreeClickFun(score);
-    //             break;
-    //         case "four":
-    //             crystalsFourClickFun(score);
-    //             break;
-    //         default:
-    //             break;
-    //     }
-    // }
-
-    // function btnClickedEventOne() {
-    //     var score = playerTotalScore;
-    //     crystalsOneClickFun(score);
-    //     // return score;
-    // }
-
-
-    // function btnClickedEventTwo() {
-    //     var score = playerTotalScore;
-    //     crystalsTwoClickFun(score);
-    //     // return score;
-    // }
-    
-
-    // function btnClickedEventThree() {
-    //     var score = playerTotalScore;
-    //     crystalsThreeClickFun(score);
-    //     // return score;
-    // }
-    
-
-    // function btnClickedEventFour() {
-    //     var score = playerTotalScore;
-    //     crystalsFourClickFun(score);
-    //     // return score;
-    // }
-    
-    // function newScore(aScore) {
-        // var score = aScore;
-        // return score;
-    // }
-
-    // function crystalsOneClickFun(oldScore) {
-    //     var currentScore = oldScore, updatedScore;
-
-    //     updatedScore = currentScore + crystalOne; // .crystalOne();
-
-    //     // if (updatedScore > parseInt(winningNumberFun.toString())) {
-    //     //     newGame("lost");
-    //     // }
-
-    //     // else if (updatedScore === parseInt(winningNumberFun.toString())) {
-    //     //     newGame("won");
-    //     // }
-
-    //     // else {
-    //         $("#playerScore").text(updatedScore);
-    //         newGameCheck(updatedScore);
-    //         playerTotalScore = updatedScore;
-    //         // return playerTotalScore;
-    //     // }
-    // }
-
-    // function crystalsTwoClickFun(oldScore) {
-    //     var currentScore = oldScore, updatedScore;
-
-    //     updatedScore = currentScore + crystalTwo; // .crystalTwo();
-
-    //     // if (updatedScore > parseInt(winningNumberFun.toString())) {
-    //     //     newGame("lost");
-    //     // }
-
-    //     // else if (updatedScore === parseInt(winningNumberFun.toString())) {
-    //     //     newGame("won");
-    //     // }
-
-    //     // else {
-    //         $("#playerScore").text(updatedScore);
-    //         newGameCheck(updatedScore);
-    //         playerTotalScore = updatedScore;
-    //         // return playerTotalScore
-    //     // }
-    // }
-
-    // function crystalsThreeClickFun(oldScore) {
-    //     var currentScore = oldScore, updatedScore;
-
-    //     updatedScore = currentScore + crystalThree; // .crystalThree();
-
-    //     // if (updatedScore > parseInt(winningNumberFun.toString())) {
-    //     //     newGame("lost");
-    //     // }
-
-    //     // else if (updatedScore === parseInt(winningNumberFun.toString())) {
-    //     //     newGame("won");
-    //     // }
-
-    //     // else {
-    //         $("#playerScore").text(updatedScore);
-    //         newGameCheck(updatedScore);
-    //         playerTotalScore = updatedScore;
-    //         // return playerTotalScore;
-    //     // }
-    // }
-
-    // function crystalsFourClickFun(oldScore) {
-    //     var currentScore = oldScore, updatedScore;
-
-    //     updatedScore = currentScore + crystalFour; // .crystalFour();
-
-    //     // if (updatedScore > parseInt(winningNumberFun.toString())) {
-    //     //     newGame("lost");
-    //     // }
-
-    //     // else if (updatedScore === parseInt(winningNumberFun.toString())) {
-    //     //     newGame("won");
-    //     // }
-
-    //     // else {
-    //         $("#playerScore").text(updatedScore);
-    //         newGameCheck(updatedScore);
-    //         playerTotalScore = updatedScore;
-    //         // return playerTotalScore;
-    //     // }
-    // }
-
-    // function newGameCheck(aScore) {
-    //     var score = aScore;
-    //     var targetScore = winningNumber;
-
-    //     if (score > targetScore) {
-    //         newGame("lost");
-    //     }
-
-    //     else if (score == targetScore) {
-    //         newGame("won");
-    //     }
-
-    //     else {
-    //         return score;
-    //     }
-    // }
-
-    // function newGame(isNewGame) {
-    //     var newGameCheck = isNewGame;
-    //     switch(newGameCheck) {
-    //         case "lost":
-    //             newWinningNumberFun(),crystalsOneFun(),crystalsTwoFun(),crystalsThreeFun(),crystalsFourFun();
-    //             // var newLosses, oldLosses = parseInt($("#playerLosses").toString());
-    //             // newLosses = oldLosses + 1;
-    //             var newLosses = totalLosses; // parseInt(totalLossesFun().toString());
-    //             newLosses = newLosses + 1;
-    //             totalLossesFun(newLosses),totalWinsFun(),newScore(0);
-    //             // newGameCheck
-    //             break;
-    //         case "won":
-    //             newWinningNumberFun(),crystalsOneFun(),crystalsTwoFun(),crystalsThreeFun(),crystalsFourFun();
-    //             // var newLosses, oldLosses = parseInt($("#playerLosses").toString());
-    //             // newLosses = oldLosses + 1;
-    //             var newWins = totalWins;
-    //             newWins = newWins + 1;
-    //             totalWinsFun(newWins),totalLossesFun(),newScore(0);
-    //             break;
-    //         default:
-    //             break;
-    //     }
-    // }
 
     function initialScoreBodyFun() {
         var newDiv;

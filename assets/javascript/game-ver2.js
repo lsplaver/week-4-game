@@ -77,8 +77,8 @@ $(document).ready(function() {
         // var aTargetDiv = $("#.instructParaTwo");
 	
         var newDiv;
-        newDiv = $("<div><br></div>");
-        $("#instructParaTwo").append(newDiv);
+        newDiv1 = $("<div><br></div>");
+        $("#instructParaTwo").append(newDiv1);
         newDiv = $("<div>empty text three</div>");
         console.log("Value of newly created local newDiv: " + newDiv.text());
 
@@ -97,9 +97,9 @@ $(document).ready(function() {
         $(targetDiv).text("Tou win the game by matching your total score to random numbers. You lose the game if your total score goes above the random number.");
         $("#instructionsBody /*ParaOne */").append(newDiv);
 
-        newDiv = $("<div><br><br></div>");
+        // newDiv = $("<div><br><br></div>");
 
-        $("#instructParaThree").append(newDiv);
+        // $("#instructParaThree").append(newDiv);
     // }
 
     // function instructParaFourFun() {
@@ -107,8 +107,8 @@ $(document).ready(function() {
 
         var newDiv;
         
-        newDiv = $("<div><br></div>");
-        $("#instructParaThree").append(newDiv);
+        newDiv1 = $("<div><br></div>");
+        $("#instructParaThree").append(newDiv1);
         newDiv = $("<div>empty text four</div>");
         console.log("Value of newly created local newDiv: " + newDiv.text());
 
@@ -127,9 +127,9 @@ $(document).ready(function() {
         $(targetDiv).text("The value of each crystal is hidden from you until you click on it.");
         $("#instructionsBody").append(newDiv);
 
-        newDiv = $("<div><br><br></div>");
+        // newDiv = $("<div><br><br></div>");
 
-        $("#instructParaFour").append(newDiv);
+        // $("#instructParaFour").append(newDiv);
     // }
 
     // function instructParaFiveFun() {
@@ -137,8 +137,8 @@ $(document).ready(function() {
 
         var newDiv;
         
-        newDiv = $("<div><br></div>");
-        $("#instructParaFour").append(newDiv);
+        newDiv1 = $("<div><br></div>");
+        $("#instructParaFour").append(newDiv1);
         newDiv = $("<div>empty text five</div>");
         console.log("Value of newly created local newDiv: " + newDiv.text());
 
@@ -158,9 +158,9 @@ $(document).ready(function() {
         $(targetDiv).text("Each time when the game starts, the game will change the values of each crystal.");
         $("#instructionsBody").append(newDiv);
 
-        newDiv = $("<div><br><br></div>");
+        // newDiv = $("<div><br><br></div>");
 
-        $("#instructParaFive").append(newDiv);
+        // $("#instructParaFive").append(newDiv);
     }
 
     function instructionsBodyFun () {

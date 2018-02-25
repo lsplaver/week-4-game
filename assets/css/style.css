@@ -14,3 +14,23 @@ h1 {
     color: darkgreen;
     font-size: medium;
 }
+
+button {
+    width: 128px;
+    height: 128px;
+    background-size: 128px;
+}
+#crystalButtonNo1 {
+    background-image: url("../images/128px-Clinohumite.jpg");
+}
+#crystalButtonNo2 {
+    background-image: url("../images/Gemperidot.JPG");
+}
+
+#crystalButtonNo3 {
+    background-image: url("../images/Quartz_rose_GeorgiaHoggMine13-128px.jpg");
+}
+
+#crystalButtonNo4 {
+    background-image: url("../images/Ruby_gem.JPG");
+}
